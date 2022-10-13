@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: mx2542/auth:latest
+          image: {{ .Values.image }}
           command:
             - "uvicorn"
           args:
@@ -45,4 +45,4 @@ spec:
             - "--port=8001"
           ports:
             - containerPort: 8001
-          imagePullPolicy: Always
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
