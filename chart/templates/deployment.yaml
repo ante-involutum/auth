@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: mx2542/anti-auth:1.0
+          image: mx2542/auth:latest
           command:
             - "uvicorn"
           args:
