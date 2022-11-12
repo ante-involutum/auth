@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: auth
+  name: "{{ .Release.Name }}-{{ .Chart.Name }}"
   labels:
-    app: auth
+    app: "{{ .Release.Name }}-{{ .Chart.Name }}"
 spec:
   selector:
-    app: auth
+    app: "{{ .Release.Name }}-{{ .Chart.Name }}"
   ports:
     - protocol: TCP
       port: 8001
@@ -17,23 +17,23 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth
+  name: "{{ .Release.Name }}-{{ .Chart.Name }}"
   labels:
-    app: auth
+    app: "{{ .Release.Name }}-{{ .Chart.Name }}"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth
+      app: "{{ .Release.Name }}-{{ .Chart.Name }}"
   template:
     metadata:
       labels:
-        app: auth
+        app: "{{ .Release.Name }}-{{ .Chart.Name }}"
     spec:
       imagePullSecrets:
         - name: regcred
       containers:
-        - name: auth
+        - name: "{{ .Release.Name }}-{{ .Chart.Name }}"
           image: {{ .Values.image }}
           command:
             - "uvicorn"
