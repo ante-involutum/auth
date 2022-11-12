@@ -1,6 +1,6 @@
 apiVersion: v2
 name: auth
-description: A auth chart for tink
+description: A auth chart for atopg
 
 # A chart can be either an 'application' or a 'library' chart.
 #
