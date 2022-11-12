@@ -1,6 +1,6 @@
+from src.model import User
 from typing import Optional
 from fastapi import FastAPI, HTTPException, Header
-from src.model import User
 
 
 app = FastAPI()

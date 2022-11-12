@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 fastapi = "==0.78.0"
 uvicorn = {version = "==0.17.6", extras = ["standard"]}
-pytest = "*"
-requests-toolbelt = "*"
-autopep8 = "*"
+pytest = "==7.1.2"
+requests-toolbelt = "==0.9.1"
+autopep8 = "==1.7.0"
 
 [dev-packages]
 
@@ -16,6 +16,5 @@ autopep8 = "*"
 python_version = "3.9"
 
 [scripts]
-serve = "uvicorn src.main:app --reload --host=127.0.0.1 --port=8001"
-build = "docker buildx build -f Dockerfile --platform linux/amd64 -t mx2542/anti-auth:1.0 . --push"
-deploy = "helm install auth chart"
+build = "docker buildx build -f Dockerfile --platform linux/amd64 -t dockerhub.qingcloud.com/qingtest/auth:1.0 . --push"
+

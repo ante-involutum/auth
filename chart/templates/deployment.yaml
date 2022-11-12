@@ -10,11 +10,8 @@ spec:
   ports:
     - protocol: TCP
       port: 8001
-      targetPort:
-        8001
-        # nodePort: 30085
+      targetPort: 8001
   clusterIP: None
-  # type: NodePort
 
 ---
 apiVersion: apps/v1
@@ -33,6 +30,8 @@ spec:
       labels:
         app: auth
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: auth
           image: {{ .Values.image }}
