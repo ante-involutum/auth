@@ -1,4 +1,5 @@
 registry: docker.io
 repository: mx2542
-image: "mx2542/auth:latest"
+image: "auth:latest"
 imagePullPolicy: Always
+private: false
