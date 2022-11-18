@@ -6,10 +6,7 @@ from requests_toolbelt.sessions import BaseUrlSession
 
 env = os.getenv('ENV')
 envs = {
-    'loc': 'http://127.0.0.1:8001',
-    'dev': 'http://atop.test:31695',
-    'test': 'http://tink.test:31695',
-    'prd': 'http://tink.com:31695',
+    'loc': 'http://127.0.0.1:8001'
 }
 
 
