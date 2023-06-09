@@ -1,5 +1,3 @@
-registry: docker.io
-repository: mx2542
-image: "auth:latest"
-imagePullPolicy: Always
-private: false
+registry: dockerhub.qingcloud.com
+repository: qingtest
+image: "auth:1.0"
